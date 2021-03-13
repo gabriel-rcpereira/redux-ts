@@ -14,7 +14,7 @@ export const searchRepositories = (term: string) => {
       const params = { params: { text: term } };
       const { data } = await axios.get('https://registry.npmjs.org/-/v1/search', params);
 
-      const repositories = data.objects.map((repository: any) => repository.name);
+      const repositories = data.objects.map((repository: any) => repository.package.name);
 
       dispatch({
         type: ActionType.SEARCH_REPOSITORIES_SUCCESS,
