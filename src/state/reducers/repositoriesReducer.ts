@@ -21,7 +21,7 @@ const repositoriesReducer = (
     case ActionType.SEARCH_REPOSITORIES_ERROR:
       return { loading: false, error: action.payload, data: [] };
     default:
-      return initialState;
+      return state;
   }
 };
 
